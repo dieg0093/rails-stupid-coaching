@@ -5,10 +5,10 @@ class QuestionsController < ApplicationController
 
   def answer
     @message = params[:question]
-    case answer
-    when message == "I am going to work"
+
+    if @message == "I am going to work"
       @answer = "Great!"
-    when message.include?("?") == true
+    elsif @message.include?("?") == true
       @answer = "Silly question, get dressed and go to work!"
     else
       @answer = "I don't care, get dressed and go to work!"
